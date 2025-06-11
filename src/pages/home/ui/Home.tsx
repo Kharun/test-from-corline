@@ -67,6 +67,8 @@ export const Home = () => {
     return () => clearInterval(interval);
   }, [allNews, refetch]);
 
+  console.log(data);
+
   return (
     <>
       {isLoading ? (
@@ -86,7 +88,7 @@ export const Home = () => {
             }
             endMessage={<p style={{ textAlign: "center" }}>Новостей нет</p>}
           >
-            <div className={styles.items}>
+            <div className={styles.news_items}>
               {allNews.slice(0, visibleCount).map(({ date, news }, index, arr) => (
                 <div key={`${news._id}-${index}`} className={styles.news_item}>
                   {(index === 0 || arr[index - 1].date !== date) && <div className={styles.date_title}>News for {date}</div>}
