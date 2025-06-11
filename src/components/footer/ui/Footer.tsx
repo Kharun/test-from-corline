@@ -25,8 +25,8 @@ export const Footer = () => {
     <>
       <div className={styles.footer}>
         <div className={styles.footer_nav}>
-          {links.map((item) => (
-            <Link to={item.link} key={item.link} className={styles.footer_link}>
+          {links.map((item, idx) => (
+            <Link to={item.link} key={idx} className={styles.footer_link}>
               {item.title}
             </Link>
           ))}

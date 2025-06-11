@@ -5,6 +5,7 @@
   gap: 24px;
   justify-content: center;
   align-items: center;
+  background: #fff;
 }
 .footer_nav {
   display: flex;

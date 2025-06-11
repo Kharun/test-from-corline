@@ -44,7 +44,7 @@ export const Navbar = () => {
   return (
     <>
       <div className={styles.navbar}>
-        <div className={styles.burger} onClick={handleShowBurger} onTouchEnd={handleShowBurger}>
+        <div className={styles.burger} onClick={handleShowBurger}>
           <BurgerIcon />
         </div>
 
@@ -53,13 +53,13 @@ export const Navbar = () => {
         </a>
 
         <div className={`${styles.burger_content} ${showBurger && styles.active}`}>
-          <div className={styles.close} onClick={handleShowBurger} onTouchEnd={handleShowBurger}>
+          <div className={styles.close} onClick={handleShowBurger}>
             <CloseIcon />
           </div>
 
           <nav className={styles.burger_links}>
-            {navLinks.map((item) => (
-              <Link to={item.link} key={item.link} className={styles.burger_link}>
+            {navLinks.map((item, idx) => (
+              <Link to={item.link} key={idx} className={styles.burger_link}>
                 {item.title}
               </Link>
             ))}
